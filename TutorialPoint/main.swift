@@ -1,23 +1,3 @@
-//
-//  main.swift
-//  TutorialPoint
-//
-//  Created by iFlame. on 01/06/17.
-//  Copyright © 2017 iFlame. All rights reserved.
-//
-
-import Foundation
-
-print("Hello, World!")
-
-//
-//  main.swift
-//  Basic
-//
-//  Created by iFlame. on 26/05/17.
-//  Copyright © 2017 iFlame. All rights reserved.
-//
-
 import Foundation
 import Cocoa
 
@@ -479,4 +459,38 @@ func Count()
     print("IntsA isEmpty: \(intsC.isEmpty) \n")
 }
 Count()
-//kkkk
+
+
+func Dictionary()
+{
+    var someVar : [Int:String] = [1:"One",2:"Two",3:"Three"]
+    print("Value of key = 1 is \(someVar[1])")
+    print("Value of key = 2 is \(someVar[2])")
+    print("Value of key = 3 is \(someVar[3]) \n")
+    
+    let oldval = someVar.updateValue("New value of Two", forKey: 2)
+    //let new = someVar[2]
+    
+    print("Old Value of key = 2 is \(oldval)")
+    print("new value of key = 2 is \(someVar[2])")
+    print("some var value of key is \(someVar) \n")
+    
+    for(key, value) in someVar
+    {
+        print("Dictionary key \(key) - Dictionary value \(value) \n")
+    }
+    
+    print("Total Items in someVar is = \(someVar.count) \n")
+    
+    someVar.removeValue(forKey: 1)
+    print("Value of key is \(someVar) \n")
+    
+    someVar[3] = nil
+    print("value of key is \(someVar) \n")
+    
+    print("someVar 1 = \(someVar[1]?.isEmpty)")
+    print("someVar 2 = \(someVar[2]?.isEmpty)")
+    print("someVar 3 = \(someVar[3]?.isEmpty)")
+    
+}
+Dictionary()
