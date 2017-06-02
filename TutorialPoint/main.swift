@@ -490,7 +490,114 @@ func Dictionary()
     
     print("someVar 1 = \(someVar[1]?.isEmpty)")
     print("someVar 2 = \(someVar[2]?.isEmpty)")
-    print("someVar 3 = \(someVar[3]?.isEmpty)")
+    print("someVar 3 = \(someVar[3]?.isEmpty) \n")
     
 }
 Dictionary()
+
+
+func Student(name: String) -> String
+{
+    return name
+}
+print(Student(name: "First Program \n"))
+
+
+func display(no1: Int) -> Int
+{
+    let a = no1
+    return a
+}
+print("\(display(no1: 10)) \n")
+
+
+func add(no1: Int,no2: Int) -> Int
+{
+    return no1 + no2
+}
+print("\(add(no1: 10, no2: 20)) \n")
+
+
+func defaultFunc() -> String
+{
+    return "Hello"
+}
+print(defaultFunc())
+
+
+func ls(array: [Int]) -> (large: Int, small: Int)
+{
+    var lar = array[0]
+    var sma = array[0]
+    for i in array[1..<array.count]
+    {
+        if i < sma
+        {
+            sma = i
+        }
+        else if i > lar
+        {
+            lar = i
+        }
+    }
+    return (lar,sma)
+}
+let num = ls(array: [10,50,30,-25,45])
+print("Largest number is: \(num.large) \nsmallest number is: \(num.small) \n")
+
+
+func withoutReturn(a: Int,b: Int)
+{
+    let a = a + b
+    let b = a - b
+    print("\(a),\(b) \n")
+}
+withoutReturn(a: 10, b: 20)
+
+
+func power(FirstArg a: Int,SecondArg b: Int) -> Int
+{
+    var res = a
+    for _ in 1..<b
+    {
+        res = res * a
+    }
+    print("\(res) \n")
+    return res
+}
+power(FirstArg: 5, SecondArg: 3)
+
+
+func Variadic<N>(member: N...)
+{
+    for i in member
+    {
+        print(i)
+    }
+    print("")
+}
+Variadic(member: 5,6,7)
+Variadic(member: "Swift","Objective-c","C")
+
+
+func temp( a1: inout Int, b1: inout Int)
+{
+    let t = a1
+    a1 = b1
+    b1 = t
+}
+var no = 2
+var co = 10
+print("Before Swapped values are \(no), \(co)")
+temp(a1: &no,b1: &co)
+print("Swapped values are \(no), \(co) \n")
+
+
+func UsingFuncType(a: Int,b: Int) -> Int
+{
+    return a + b
+}
+var addition : (Int,Int) -> Int = UsingFuncType
+print("Result : \(addition(10,20)) \n")
+
+
