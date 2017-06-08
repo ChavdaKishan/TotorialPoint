@@ -1,6 +1,10 @@
 import Foundation
 import Cocoa
 
+
+/*-----------------------------------------Basic Syntax-----------------------------------------*/
+
+
 func PrintString()
 {
     print("\(Mystring) \n")
@@ -8,13 +12,11 @@ func PrintString()
 let Mystring : String = "Hello World!"
 PrintString()
 
-
 func Semicolon()
 {
     let name = "Kishan"; print("\(name) \n")
 }
 Semicolon()
-
 
 func WhiteSpace(nm1:String,nm2:String) -> String
 {
@@ -22,7 +24,6 @@ func WhiteSpace(nm1:String,nm2:String) -> String
     return nm
 }
 print(WhiteSpace(nm1:"Kishan",nm2:" Chavda"), "\n")
-
 
 func Literals()
 {
@@ -34,6 +35,9 @@ func Literals()
     print("String Literal is: \(c) \n")
 }
 Literals()
+
+
+/*-----------------------------------------DataType-----------------------------------------*/
 
 
 func DataType()
@@ -74,7 +78,6 @@ func DataType()
 }
 DataType()
 
-
 func BoundValue()
 {
     let a = Int8.min
@@ -89,7 +92,6 @@ func BoundValue()
 }
 BoundValue()
 
-
 func TypeAlias()
 {
     let a : feet = "Hello World!"
@@ -98,17 +100,15 @@ func TypeAlias()
 typealias feet = String
 TypeAlias()
 
-
 /*
  func TypeSafety()
- {
- var a = 42
- a = "How are you"
- print(a)
- }
- TypeSafety()
- */
-
+{
+    var a = 42
+    a = "How Are You"
+    print(a)
+}
+TypeSafety()
+*/
 
 func TypeInference()
 {
@@ -127,13 +127,15 @@ func TypeInference()
 TypeInference()
 
 
+/*-----------------------------------------Variable-----------------------------------------*/
+
+
 func VariableDeclaration()
 {
     print("\(name) \n")
 }
 var name : Int = 50
 VariableDeclaration()
-
 
 func TypeAnnotations()
 {
@@ -142,7 +144,6 @@ func TypeAnnotations()
 var nm : String = "my name is kishan"
 TypeAnnotations()
 
-
 func NamingVariable()
 {
     let _a = "Hello, How are you"
@@ -150,15 +151,16 @@ func NamingVariable()
 }
 NamingVariable()
 
-
 func PrintingVariable()
 {
     let no1 = 10
     let no2 = 20
     print("No is: \(no1) and name is: \(no2) \n")
 }
-
 PrintingVariable()
+
+
+/*-----------------------------------------Optional-----------------------------------------*/
 
 
 func Optionals()
@@ -175,7 +177,6 @@ func Optionals()
 var mystring : String? = nil
 Optionals()
 
-
 func ForcedUnwrapping()
 {
     if mystring1 != nil
@@ -191,7 +192,6 @@ var mystring1 : String?
 mystring1 = "Hello World!"
 ForcedUnwrapping()
 
-
 func AutomaticUnwrapping()
 {
     if mystring3 != nil
@@ -206,7 +206,6 @@ func AutomaticUnwrapping()
 var mystring3 : String!
 mystring3 = "Hello World!"
 AutomaticUnwrapping()
-
 
 func OptionalBinding()
 {
@@ -224,13 +223,15 @@ mystring4 = "Hello, Swift"
 OptionalBinding()
 
 
+/*-----------------------------------------Constant-----------------------------------------*/
+
+
 func ConstantsDeclaration()
 {
     let constA = 42
     print("\(constA) \n")
 }
 ConstantsDeclaration()
-
 
 func TypeAnnotationConstants()
 {
@@ -242,7 +243,6 @@ func TypeAnnotationConstants()
 }
 TypeAnnotationConstants()
 
-
 func NamingConstants()
 {
     let const = "Hello, Swift"
@@ -250,13 +250,15 @@ func NamingConstants()
 }
 NamingConstants()
 
-
 func PrintingConstants()
 {
     let constA = "How are you friends"
     print("\(constA) \n")
 }
 PrintingConstants()
+
+
+/*-----------------------------------------Literals-----------------------------------------*/
 
 
 func IntegerLiterals()
@@ -275,7 +277,6 @@ func IntegerLiterals()
 }
 IntegerLiterals()
 
-
 func FloatingPointLiteral()
 {
     let decimalDouble = 12.1875
@@ -289,13 +290,15 @@ func FloatingPointLiteral()
 }
 FloatingPointLiteral()
 
-
 func StringLiteral()
 {
     let str = "Hello \t World \n \n \"Hello\" \'World\' "
     print("\(str) \n")
 }
 StringLiteral()
+
+
+/*-----------------------------------------Loops-----------------------------------------*/
 
 
 func ForIn()
@@ -307,7 +310,6 @@ func ForIn()
     }
 }
 ForIn()
-
 
 func whileloop()
 {
@@ -325,7 +327,6 @@ func whileloop()
 var i = 0
 whileloop()
 
-
 func repeatwhile()
 {
     repeat
@@ -341,6 +342,9 @@ func repeatwhile()
 }
 var j = 0
 repeatwhile()
+
+
+/*-----------------------------------------String-----------------------------------------*/
 
 
 func Empty()
@@ -361,7 +365,6 @@ func Empty()
 }
 Empty()
 
-
 func Interpolate()
 {
     let str1 = "kishan"
@@ -369,7 +372,6 @@ func Interpolate()
     print("\(str1) and \(str2) are friends \n")
 }
 Interpolate()
-
 
 func concatenate()
 {
@@ -380,14 +382,12 @@ func concatenate()
 }
 concatenate()
 
-
 func Length()
 {
     let str = "kishan"
     print("\(str.characters.count) \n")
 }
 Length()
-
 
 func Comparison()
 {
@@ -405,6 +405,25 @@ func Comparison()
 }
 Comparison()
 
+func unicode()
+{
+    var unicodeString = "Dog‼🐶"
+    print("UTF-8 codes: ")
+    for code in unicodeString.utf8
+    {
+        print("\(code)")
+    }
+    print("UTF-16 codes: ")
+    for code in unicodeString.utf16
+    {
+        print("\(code) \n")
+    }
+}
+unicode()
+
+
+/*-----------------------------------------Characters-----------------------------------------*/
+
 
 func Character()
 {
@@ -412,6 +431,29 @@ func Character()
     print("\(char) \n")
 }
 Character()
+
+/*
+func CharFromStr()
+{
+    for ch in "Hello"
+    {
+        print(ch)
+    }
+}
+CharFromStr()
+ */
+
+func ConcateStrWithChar()
+{
+    var Str : String = "Hello"
+    let Char : Character = "G"
+    Str.append(Char)
+    print("Value of concate is : \(Str) \n")
+}
+ConcateStrWithChar()
+
+
+/*-----------------------------------------Array-----------------------------------------*/
 
 
 func Array()
@@ -442,7 +484,6 @@ func AddingTwoArray()
 }
 AddingTwoArray()
 
-
 func Count()
 {
     let intsA = [Int](repeating: 2, count:2)
@@ -459,6 +500,9 @@ func Count()
     print("IntsA isEmpty: \(intsC.isEmpty) \n")
 }
 Count()
+
+
+/*-----------------------------------------Dictionary-----------------------------------------*/
 
 
 func Dictionary()
@@ -496,12 +540,14 @@ func Dictionary()
 Dictionary()
 
 
+/*-----------------------------------------Function-----------------------------------------*/
+
+
 func Student(name: String) -> String
 {
     return name
 }
 print(Student(name: "First Program \n"))
-
 
 func display(no1: Int) -> Int
 {
@@ -510,20 +556,17 @@ func display(no1: Int) -> Int
 }
 print("\(display(no1: 10)) \n")
 
-
 func add(no1: Int,no2: Int) -> Int
 {
     return no1 + no2
 }
 print("\(add(no1: 10, no2: 20)) \n")
 
-
 func defaultFunc() -> String
 {
     return "Hello"
 }
 print(defaultFunc())
-
 
 func ls(array: [Int]) -> (large: Int, small: Int)
 {
@@ -545,7 +588,6 @@ func ls(array: [Int]) -> (large: Int, small: Int)
 let num = ls(array: [10,50,30,-25,45])
 print("Largest number is: \(num.large) \nsmallest number is: \(num.small) \n")
 
-
 func withoutReturn(a: Int,b: Int)
 {
     let a = a + b
@@ -553,7 +595,6 @@ func withoutReturn(a: Int,b: Int)
     print("\(a),\(b) \n")
 }
 withoutReturn(a: 10, b: 20)
-
 
 func power(FirstArg a: Int,SecondArg b: Int) -> Int
 {
@@ -567,7 +608,6 @@ func power(FirstArg a: Int,SecondArg b: Int) -> Int
 }
 power(FirstArg: 5, SecondArg: 3)
 
-
 func Variadic<N>(member: N...)
 {
     for i in member
@@ -578,7 +618,6 @@ func Variadic<N>(member: N...)
 }
 Variadic(member: 5,6,7)
 Variadic(member: "Swift","Objective-c","C")
-
 
 func temp( a1: inout Int, b1: inout Int)
 {
@@ -592,7 +631,6 @@ print("Before Swapped values are \(no), \(co)")
 temp(a1: &no,b1: &co)
 print("Swapped values are \(no), \(co) \n")
 
-
 func UsingFuncType(a: Int,b: Int) -> Int
 {
     return a + b
@@ -600,4 +638,27 @@ func UsingFuncType(a: Int,b: Int) -> Int
 var addition : (Int,Int) -> Int = UsingFuncType
 print("Result : \(addition(10,20)) \n")
 
+func sum(a: Int, b: Int) -> Int
+{
+    return a + b
+}
+var add1: (Int, Int) -> Int = sum
+print("Result: \(addition(40, 89))")
+func another(addition: (Int, Int) -> Int, a: Int, b: Int) {
+    print("Result: \(add1(a, b)) \n")
+}
+another(addition: sum, a:10, b: 20)
+
+func NestedFunc(forDecrement total: Int) -> () -> Int
+{
+    var overallDecrement = 0
+    func decrementer() -> Int
+    {
+        overallDecrement -= total
+        return overallDecrement
+    }
+    return decrementer
+}
+let decrem = NestedFunc(forDecrement: 30)
+print(decrem())
 
