@@ -662,3 +662,131 @@ func NestedFunc(forDecrement total: Int) -> () -> Int
 let decrem = NestedFunc(forDecrement: 30)
 print(decrem())
 
+/*-----------------------------------------Closure-----------------------------------------*/
+//Void Function
+func testFunction()->()
+{
+    print("Dummy Entry")
+}
+testFunction()
+var varFunction = testFunction
+varFunction()
+
+
+//Perameterise Closure
+let sum = {(no1: Int,no2: Int) -> (Int) in
+    return no1 + no2
+}
+let digits = sum(10,20)
+print(digits)
+
+
+//Sorted of Closure
+let count = [50,20,-5,14,25]
+var descending = count.sorted{n1,n2 in n1 > n2}
+var ascending = count.sorted{n1,n2 in n1 < n2}
+print(descending)
+print(ascending)
+
+
+var shorthand: (String,String) -> String
+shorthand = {$1}
+print(shorthand("100","200"))
+//shorthand = {$0}
+//print(shorthand("300","400"))
+
+
+
+func networkCall(completionHandler: @escaping (Int)->(Float)) -> Void
+{
+    print("Process Goes Here")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        let valueFloat = completionHandler(10)
+        print("ValueFloat = \(valueFloat)")
+        
+    })
+}
+networkCall { (value) -> (Float) in
+    print("Value Int = \(value)")
+    return 1.0
+}
+
+
+//AutoClosure
+var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+print(customersInLine.count)
+
+let customerProvider = {customersInLine.remove(at: 0)}
+print(customersInLine.count)
+
+print("Now serving \(customerProvider())!")
+print(customersInLine.count)
+
+
+/*-----------------------------------------Class & Structure-----------------------------------------*/
+// Structure
+struct student
+{
+    var standard : Int
+    var name : String
+    
+    func PrintDetail()
+    {
+        print("Student id is: ", standard)
+        print("Student name is: " + name , "\n")
+    }
+}
+
+var obj1 = student(standard : 12, name : "Montu")
+var obj2 = obj1
+obj2.name = "Kishan"
+
+obj1.PrintDetail()
+obj2.PrintDetail()
+
+// Class
+class Cstudent
+{
+    var Id : Int
+    var Name : String
+    
+    init(b: Int, c: String)
+    {
+        self.Id = b
+        self.Name = c
+    }
+    func PrintDetail()
+    {
+        print("\nStudent ID Is: ", Id)
+        print("Student Name Is: ", Name)
+    }
+    func PrintDetail(message msg : String)
+    {
+        self.PrintDetail()
+        print("Student Message is: \(msg)")
+    }
+    func PrintDetail(Address add: String)
+    {
+        self.PrintDetail(message: "How are you Friends")
+        print("Student address is: \(add)")
+    }
+}
+var obj3 = Cstudent(b: 20, c: "Montu")
+obj3.PrintDetail()
+obj3.Name="Kishan"
+obj3.PrintDetail(message: "How are you")
+obj3.Name="Shailesh"
+obj3.PrintDetail(Address: "Naroda")
+
+// Inheritance
+class Cstudent2 : Cstudent
+{
+    override func PrintDetail(message : String)
+    {
+        super.PrintDetail(message: message)
+        print("Hello...")
+    }
+}
+
+
+/*-----------------------------------------Properties-----------------------------------------*/
