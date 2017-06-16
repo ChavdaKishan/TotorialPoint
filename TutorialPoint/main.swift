@@ -723,6 +723,95 @@ print("Now serving \(customerProvider())!")
 print(customersInLine.count)
 
 
+/*-----------------------------------------Enumeration-----------------------------------------*/
+enum compassPoint
+{
+    case north
+    case south
+    case east
+    case west
+}
+enum planet
+{
+    case mercury,venus,earth,mars,jupiter,saturn,uranus,neptune
+}
+
+var directionToHead = compassPoint.south
+
+//directionToHead = .east
+switch directionToHead
+{
+case .north:
+    print("Lost of planet have a north")
+case .south:
+    print("watch out for penguins")
+case .east:
+    print("where the sun rises")
+case .west:
+    print("wherer the sun skies are blue")
+}
+
+let someplanet = planet.earth
+switch someplanet
+{
+case .earth:
+    print("mostly harmless")
+default:
+    print("not a safe place for humans")
+}
+
+// Associated value
+enum barcode
+{
+    case upc(Int,Int,Int,Int)
+    case qrcode(String)
+}
+var productBarcode = barcode.upc(8,85909,51226,3)
+productBarcode = .qrcode("abcdefg")
+
+switch productBarcode
+{
+case .upc(let numberSystem, let manufacturer, let product, let check):
+    print("UPC: \(numberSystem), \(manufacturer), \(product), \(check)")
+case .qrcode(let productCode):
+    print("QR code: \(productCode)")
+}
+
+// Raw values
+enum ASCIIControlCharacter: Character
+{
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+enum planet1: Int
+{
+    case mercury = 5, venus, earth,mars
+}
+var earthOrder = planet1.earth.rawValue
+print(earthOrder)
+
+enum compassPoint1: String
+{
+    case north, south, east, west
+}
+let earthsOrder = compassPoint1.west.rawValue
+print(earthsOrder)
+
+let positionToFind = 7
+if let somePlanet = planet1(rawValue: positionToFind) {
+    switch somePlanet {
+    case .earth:
+        print("Mostly harmless")
+    default:
+        print("Not a safe place for humans")
+    }
+} else {
+    print("There isn't a planet at position \(positionToFind)")
+}
+
+
 /*-----------------------------------------Class & Structure-----------------------------------------*/
 // Structure
 struct student
@@ -790,3 +879,32 @@ class Cstudent2 : Cstudent
 
 
 /*-----------------------------------------Properties-----------------------------------------*/
+struct fixedLengthRange
+{
+    var first: Int
+    let Length: Int
+}
+
+var rangeOfThreeItems = fixedLengthRange(first: 0, Length: 3)
+print(rangeOfThreeItems)
+
+rangeOfThreeItems.first = 6
+print(rangeOfThreeItems)
+
+
+class DataImporter
+{
+    var filename = "data.txt"
+}
+class DataManager
+{
+    lazy var importer = DataImporter()
+    var data = [String]()
+}
+let manager = DataManager()
+manager.data.append("some data")
+print(manager.data)
+manager.data.append("some more data")
+print(manager.data)
+
+print(manager.importer.filename)
