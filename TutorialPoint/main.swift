@@ -908,3 +908,165 @@ manager.data.append("some more data")
 print(manager.data)
 
 print(manager.importer.filename)
+
+
+/*-----------------------------------------Inheritance-----------------------------------------*/
+class StudDetails {
+    var mark1: Int;
+    var mark2: Int;
+    
+    init(stm1:Int, results stm2:Int) {
+        mark1 = stm1;
+        mark2 = stm2;
+    }
+    func display()
+    {
+        print("mark1: \(mark1),mark2: \(mark2)")
+    }
+}
+class displaydetail : StudDetails {
+    init() {
+        super.init(stm1: 93, results: 89)
+    }
+}
+
+let marksobtained = displaydetail()
+marksobtained.display()
+
+// Method Overriding
+class cricket
+{
+    func display()
+    {
+        print("welcome to swift super class")
+    }
+}
+class tennis : cricket
+{
+    override func display() {
+        print("welcome to swift sub class")
+    }
+}
+let cri = cricket()
+cri.display()
+
+let ten = tennis()
+ten.display()
+
+// Property Overriding
+class circle
+{
+    var radius = 12.5
+    var area : String {
+        return "of rectangle for \(radius)"
+    }
+}
+class rectangle: circle {
+    var print = 7
+    override var area: String {
+        return super.area + "is now overiden as \(print)"
+    }
+}
+let rect = rectangle()
+rect.radius = 25.0
+rect.print = 3
+print("radius \(rect.area)")
+
+
+/*-----------------------------------------Initialization-----------------------------------------*/
+struct rectangle1 {
+    var length : Double
+    var breadth: Double
+    
+    init()
+    {
+        length = 6
+        breadth = 12
+    }
+}
+var area = rectangle1()
+print("area of rectangle is \(area.length*area.breadth)")
+
+// Parameters Initialization
+struct rectangles
+{
+    var length: Double
+    var breadth: Double
+    var area: Double
+    init(fromLength length: Double, fromBreadth breadth: Double) {
+        self.length = length
+        self.breadth = breadth
+        area = length * breadth
+    }
+    init(fromLeng leng: Double, fromBread bread: Double) {
+        self.length = leng
+        self.breadth = bread
+        area = leng * bread
+    }
+}
+let ar = rectangles(fromLength: 6, fromBreadth: 12)
+print("Area is: \(ar)")
+let are = rectangles(fromLeng: 36, fromBread: 12)
+print("Area is: \(are)")
+
+// Local & External Parameters
+struct Days
+{
+    let sunday, monday, tuesday: Int
+    init(sunday: Int, monday: Int, tuesday: Int)
+    {
+        self.sunday = sunday
+        self.monday = monday
+        self.tuesday = tuesday
+    }
+    init(daysofaweek: Int)
+    {
+        sunday = daysofaweek
+        monday = daysofaweek
+        tuesday = daysofaweek
+    }
+}
+let week = Days(sunday: 1, monday: 2, tuesday: 3)
+print("Days of a Week is: \(week.sunday)")
+print("Days of a Week is: \(week.monday)")
+print("Days of a Week is: \(week.tuesday)")
+let weekdays = Days(daysofaweek: 4)
+print("Days of a Week is: \(weekdays.sunday)")
+print("Days of a Week is: \(weekdays.monday)")
+print("Days of a Week is: \(weekdays.tuesday)")
+
+// Parameters Without External Names
+struct rect1
+{
+    var len: Double
+    init(fromBreadth breadth: Double)
+    {
+        len = breadth * 10
+    }
+    init(frombre bre: Double)
+    {
+        len = bre * 30
+    }
+    init(_ area: Double)
+    {
+        len = area
+    }
+}
+let rec = rect1(180.0)
+print("area is: \(rec.len)")
+let rec1 = rect1(370.0)
+print("area is: \(rec1.len)")
+let rec2 = rect1(110.0)
+print("area is: \(rec2.len)")
+
+// Default Initializers
+class defaultExample
+{
+    var studname: String?
+    var stdmark = 98
+    var pass = true
+}
+var result = defaultExample()
+print("Result is: \(result.stdmark)")
+print("Result is: \(result.stdmark)")
+print("Result is: \(result.pass)")
