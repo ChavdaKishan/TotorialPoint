@@ -1070,3 +1070,57 @@ var result = defaultExample()
 print("Result is: \(result.stdmark)")
 print("Result is: \(result.stdmark)")
 print("Result is: \(result.pass)")
+
+// Required Initializers
+class classA
+{
+    required init()
+    {
+        let a = 10
+        print(a)
+    }
+}
+class classB: classA
+{
+    required init()
+    {
+        let b = 30
+        print(b)
+    }
+}
+let res = classA()
+let pri = classB()
+
+/*-----------------------------------------DeInitialization-----------------------------------------*/
+var counter = 0
+class baseclass
+{
+    init()
+    {
+        counter+=1
+    }
+    deinit
+    {
+        counter-=1
+    }
+}
+var pri1: baseclass? = baseclass()
+print(counter)
+pri1 = nil
+print(counter)
+
+var counter1 = 0
+class baseclass1
+{
+    init()
+    {
+        counter1+=1
+    }
+    
+    deinit {
+        counter1-=1
+    }
+}
+var pri2: baseclass1? = baseclass1()
+print(counter1)
+print(counter1)
