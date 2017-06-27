@@ -910,6 +910,91 @@ print(manager.data)
 print(manager.importer.filename)
 
 
+/*-----------------------------------------Method-----------------------------------------*/
+// Instane Methods
+class calculations
+{
+    let a: Int
+    let b: Int
+    let res: Int
+    
+    init(a: Int, b: Int)
+    {
+        self.a = a
+        self.b = b
+        res = a + b
+    }
+    func total(c: Int) -> Int
+    {
+        return res - c
+    }
+    func result()
+    {
+        print("Result is: \(total(c: 20))")
+        print("Result is: \(total(c: 50))")
+    }
+}
+let display = calculations(a: 600,b: 300)
+display.result()
+
+// Local and External Parameter Names
+class division
+{
+    var count: Int = 0
+    
+    func increment(no1: Int, no2: Int)
+    {
+        count = no1 / no2
+        print(count)
+    }
+}
+var object1 = division()
+object1.increment(no1: 10, no2: 2)
+
+// External parameter name with # and _ symbol
+/*class multiple
+ {
+ var count: Int = 0
+ func increment(#no1: Int, no2: Int)
+ {
+ count = no1 * no2
+ print(count)
+ }
+ }
+ let counter = multiple()
+ counter.increment(no1: 800,no2: 3)
+ */
+
+// self Property In Methods
+class calculate
+{
+    let a: Int
+    let b: Int
+    let res: Int
+    
+    init(a: Int, b: Int)
+    {
+        self.a = a
+        self.b = b
+        res = a + b
+        print("Inside Self Block: \(res)")
+    }
+    
+    func tot(c: Int) -> Int
+    {
+        return res - c
+    }
+    
+    func result()
+    {
+        print("Result is: \(tot(c: 20))")
+        print("Result is: \(tot(c: 50))")
+    }
+}
+let sum1 = calculate(a: 1200, b: 300)
+sum1.result()
+
+
 /*-----------------------------------------Inheritance-----------------------------------------*/
 class StudDetails {
     var mark1: Int;
